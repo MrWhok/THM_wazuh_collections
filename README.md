@@ -1,0 +1,1 @@
+# THM_wazuh_collections
