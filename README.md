@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Wazuh](#wazuh)
+- [Custom Alert Rules in Wazuh](#custom-alert-rules-in-wazuh)
 
 
 ## Wazuh
@@ -77,3 +78,50 @@
 1. Analyse the report. What is the name of the agent that has generated the most alerts?
 
     The answer is `agent-001`.
+
+
+## Custom Alert Rules in Wazuh
+### Decoders
+1. Looking at the Sysmon Log, what will the value of sysmon.commandLine be?
+
+    The answer is `"C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" "-file" "C:\Users\Alberto\Desktop\test.ps1"`.
+
+2. What would the extracted value be if the regex is set to "User: \S*"?
+
+    The answer is `WIN-P57C9KN929H\Alberto`.
+
+## Rules
+1.  From the Ruleset Test results, what is the <mitre> ID of rule id 184666?
+
+    The answer is `T1055`.
+
+2. According to the Wazuh documentation, what is the description of the rule with a classification level of 12?
+
+    The answer is `High importance event`.
+
+3. In the Ruleset Test page, change the value of  "sysmon.image" to "taskhost.exe', and press the "Test" button again. What is the ID of the rule that will get triggered?
+
+    The answer is `184736`.
+
+### Rule Order
+1. In the sysmon_rules.xml file, what is the Rule ID of the parent of 184717?
+
+    The answer is `184716`.
+
+### Custom Rules
+1. What is the regex field name used in the local_rules.xml?
+
+    The answer is `audit.cwd`.
+
+2. Looking at the log, what is the current working directory (cwd) from where the command was executed?
+
+    The answer is `/var/log/audit`.
+
+### Fine-Tuning
+1. If the filename in the logs is "test.php", what rule ID will be triggered?
+
+    The answer is `100003`.
+
+2. If the filename in the logs is "malware-checker.sh", what is the rule classification level in the generated alert?
+
+    The answer is `12`.
